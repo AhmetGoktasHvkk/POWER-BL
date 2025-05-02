@@ -1,0 +1,55 @@
+1. Verilerin Yüklenmesi ve Veri Modelleme
+İlk olarak, Sigorta Veri Setini Power BI'ye yükledik. Veriler Excel dosyasından alındı ve Sigorta Poliçeleri, Prim Gelirleri, Müşteri Sayıları ve Ödeme Geçmişi olmak üzere 4 ana tablodan oluştu.
+
+Sigorta Poliçeleri tablosu, poliçenin türü, müşteri adı, satış tarihi ve tutarını içeriyor.
+
+Prim Gelirleri tablosu, her yılın toplam prim gelirini gösteriyor.
+
+Müşteri Sayıları tablosu, her yıl için yeni müşteri sayısını içeriyor.
+
+Ödeme Geçmişi tablosu, poliçenin ödeme durumunu içeriyor.
+
+Power BI'da Model sekmesine geçerek, bu tablolarda Poliçe ID ve Yıl gibi anahtarlar ile ilişkiler kurduk. Bu ilişkiler, verilerimizi birbirine bağlayarak analiz yapmamızı sağladı.
+
+2. Görselleştirmelere Başlama
+İlk adım olarak, basit görselleştirmeler ile raporun temelini attık. Görselleştirmeler, verilerin daha kolay anlaşılmasını sağlar. Şu görselleştirmeleri ekledik:
+
+Bar Chart (Sütun Grafik): Poliçe Türü'nün her bir satış tutarını karşılaştırdık. Bu, hangi poliçe türlerinin daha fazla gelir sağladığını gösterdi.
+
+Line Chart (Çizgi Grafik): Yıl bazında Prim Geliri'nin değişimini gösterdik. Bu, sigorta şirketinin yıllık prim gelirlerindeki artış ve düşüşleri görselleştirdi.
+
+Pie Chart (Pasta Grafik): Ödeme Durumuna göre poliçelerin dağılımını gösterdik. Ödenen ve ödenmeyen poliçelerin oranlarını görsel olarak sunduk.
+
+3. İleri Seviye Görselleştirmeler
+Daha ileri seviye analizler yapmak için TreeMap ve Waterfall Chart gibi gelişmiş görselleştirmeler kullandık:
+
+TreeMap: Poliçe Türü'nün satış tutarına göre her bir kategoriyi görselleştirdik. Bu, her poliçe türünün ne kadar büyük olduğunu görsel olarak gösterdi.
+
+Waterfall Chart: Prim Geliri'ndeki yıllık değişimi adım adım takip ettik. Bu görselleştirme, prim gelirindeki artış ve düşüşleri görsel olarak sundu.
+
+4. R Visuals ile İleri Düzey Müşteri Segmentasyonu
+R Visuals kullanarak, k-means clustering gibi ileri düzey analizler gerçekleştirdik:
+
+K-means clustering: Müşteri segmentasyonu yapmak için, müşterileri benzer poliçe tutarlarına göre gruplandırdık. Bu, farklı segmentlerdeki müşterilerin poliçe tutarlarını görsel olarak sunmamızı sağladı.
+
+Regresyon Modelleri: Poliçe Tutarı ile diğer faktörler arasındaki ilişkiyi analiz ettik. Örneğin, Yaş ve Cinsiyet gibi faktörlerle Poliçe Tutarı arasındaki ilişkiyi incelemek için lineer regresyon modelini kullandık.
+
+5. DAX Hesaplamaları
+DAX (Data Analysis Expressions) kullanarak raporumuza bazı hesaplamalar ekledik:
+
+ToplamPrimGeliri: Her yılın toplam prim gelirini hesapladık.
+
+HedefeUlasmaOrani: Prim gelirlerinin hedefe ne kadar yaklaştığını hesapladık.
+
+SatışPerformansı: Poliçe tutarına göre her poliçeye bir "Yüksek" veya "Düşük" satış performansı etiketi ekledik.
+
+YıllıkBüyüme: Yıllık prim gelirindeki büyüme oranını hesapladık.
+
+Bu DAX ölçütleri, raporda dinamik olarak verilerinizi analiz etmenizi sağladı.
+
+6. Etkileşimli Raporlar: Slicer Kullanımı
+Raporumuzu daha etkileşimli hale getirmek için Slicer kullandık. Slicer, kullanıcıların rapordaki verileri filtrelemesine olanak tanır:
+
+Yıl veya Poliçe Türü gibi verileri Slicer ile filtreleyerek, kullanıcıların rapordaki verileri istedikleri gibi seçmelerini sağladık.
+
+Kullanıcılar, belirli bir yılı veya poliçe türünü seçerek, görselleştirmelerdeki verilerin sadece seçilen kritere göre güncellenmesini sağladı.
